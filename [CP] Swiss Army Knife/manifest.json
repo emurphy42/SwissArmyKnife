@@ -1,0 +1,12 @@
+﻿{
+  "Name": "[CP] Swiss Army Knife",
+  "Author": "John Peters (you know, the farmer?)",
+  "Version": "0.1.0",
+  "Description": "Adds a tool to emulate keyboard input.",
+  "UniqueID": "JohnPeters.SwissArmyKnifeCP",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": [ "Nexus:???" ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

@@ -1,0 +1,31 @@
+﻿{
+  "Format": "1.19.0",
+  "ConfigSchema": {
+    "ToolSprite": { "Default": "MobilePhone" }
+  },
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Assets/MobilePhone.png",
+      "FromFile":  "assets/MobilePhone.png"
+    }
+    //{
+    //  "Action": "EditImage",
+    //  "Target": "TileSheets/tools",
+    //  "FromFile": "assets/{{ToolSprite}}.png",
+    //  "PatchMode": "Replace",
+    //  "FromArea": {
+    //    "X": 0,
+    //    "Y": 0,
+    //    "Width": 96,
+    //    "Height": 32
+    //  },
+    //  "ToArea": {
+    //    "X": 0,
+    //    "Y": 400,
+    //    "Width": 96,
+    //    "Height": 32
+    //  }
+    //}
+  ]
+}
