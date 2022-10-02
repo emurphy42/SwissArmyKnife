@@ -1,0 +1,6 @@
+﻿Description
+-----------
+
+Adds a tool that emulates a keypress when used. This may be helpful if you use a controller.
+
+Default config options are geared for Mobile Phone by aedenthorn, however ﻿you can repurpose it by changing options and adding a different image in the assets folder.

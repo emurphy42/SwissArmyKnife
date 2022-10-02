@@ -16,6 +16,11 @@ namespace SwissArmyKnife
 		private SButton keypress;
 		private ModEntry creator;
 
+		// Required to allow the item to be included in save files
+		public SwissArmyKnifeItem()
+        {
+        }
+
 		public SwissArmyKnifeItem(string name, string description, string image, SButton keypress, ModEntry creator) : base(
 			name: name,
 			upgradeLevel: 0,

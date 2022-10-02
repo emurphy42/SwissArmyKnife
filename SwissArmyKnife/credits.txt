@@ -1,0 +1,5 @@
+﻿Credits
+-------
+
+aedenthorn, whose Mobile Phone mod inspired this one.
+spacechase0, for guidance in getting the core functionality up and running.
