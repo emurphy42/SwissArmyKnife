@@ -5,9 +5,11 @@ using StardewModdingAPI.Utilities;
 using StardewValley;
 using System;
 using System.Reflection;
+using System.Xml.Serialization;
 
 namespace SwissArmyKnife
 {
+	[XmlType("Mods_JohnPeters_SwissArmyKnife")]
     public class SwissArmyKnifeItem : Tool
     {
 		public new string description;
@@ -29,12 +31,13 @@ namespace SwissArmyKnife
 			stackable: false
 		)
 		{
-			this.description = description;
-			this.image = image;
-			this.texture = creator.Helper.ModContent.Load<Texture2D>(string.Format("assets/{0}.png", this.image));
-			this.keypress = keypress;
-			this.creator = creator;
-			base.InstantUse = true;
+			Initialize(
+				name: name,
+				description: description,
+				image: image,
+				keypress: keypress,
+				creator: creator
+			);
 		}
 
 		public override Item getOne()
@@ -50,7 +53,17 @@ namespace SwissArmyKnife
 			return swissArmyKnife;
 		}
 
-		protected override string loadDescription()
+		public void Initialize(string name, string description, string image, SButton keypress, ModEntry creator)
+		{
+            this.description = description;
+            this.image = image;
+            this.texture = creator.Helper.ModContent.Load<Texture2D>(string.Format("assets/{0}.png", this.image));
+            this.keypress = keypress;
+            this.creator = creator;
+            base.InstantUse = true;
+        }
+
+        protected override string loadDescription()
 		{
 			return description;
 		}
