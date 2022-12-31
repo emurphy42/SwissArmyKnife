@@ -11,6 +11,10 @@
     {
       "UniqueID": "Pathoschild.ContentPatcher",
       "IsRequired": true
+    },
+    {
+      "UniqueID": "spacechase0.SpaceCore",
+      "IsRequired": true
     }
   ]
 }
