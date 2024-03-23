@@ -40,7 +40,7 @@ namespace SwissArmyKnife
 			);
 		}
 
-		public override Item getOne()
+		protected override Item GetOneNew()
 		{
 			SwissArmyKnifeItem swissArmyKnife = new SwissArmyKnifeItem(
 				name: base.BaseName,
@@ -49,7 +49,7 @@ namespace SwissArmyKnife
 				keypress: keypress,
 				creator: creator
 			);
-			swissArmyKnife._GetOneFrom(this);
+            // swissArmyKnife._GetOneFrom(this);
 			return swissArmyKnife;
 		}
 

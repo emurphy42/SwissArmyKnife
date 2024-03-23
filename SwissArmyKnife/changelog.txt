@@ -4,3 +4,5 @@
 1.0.0: Initial release.
 
 1.0.1: Fix bug preventing end-of-day save.
+
+1.1.0: Update for Stardew 1.6.

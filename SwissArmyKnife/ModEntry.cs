@@ -48,25 +48,29 @@ namespace SwissArmyKnife
             );
             foreach (var farmer in Game1.getOnlineFarmers())
             {
-                if (farmer.hasItemInInventoryNamed(this.Config.SwissArmyKnifeName))
+                var farmerHasItem = false;
+
+                // If they have one reloaded from a save file, re-insert all the needed attributes
+                foreach (var item in farmer.Items)
                 {
-                    // In case it was just reloaded from a save file, re-insert all the needed attributes
-                    foreach (var item in farmer.Items)
+                    if (item != null && item.GetType() == typeof(SwissArmyKnifeItem))
                     {
-                        if (item != null && item.GetType() == typeof(SwissArmyKnifeItem))
-                        {
-                            var knife = (SwissArmyKnifeItem)item;
-                            knife.Initialize(
-                                name: this.Config.SwissArmyKnifeName,
-                                description: this.Config.SwissArmyKnifeDescription,
-                                image: this.Config.SwissArmyKnifeImage,
-                                keypress: this.Config.SwissArmyKnifeKeypress,
-                                creator: this
-                            );
-                        }
+                        var knife = (SwissArmyKnifeItem)item;
+                        knife.Initialize(
+                            name: this.Config.SwissArmyKnifeName,
+                            description: this.Config.SwissArmyKnifeDescription,
+                            image: this.Config.SwissArmyKnifeImage,
+                            keypress: this.Config.SwissArmyKnifeKeypress,
+                            creator: this
+                        );
+                        farmerHasItem = true;
                     }
+                }
+                if (farmerHasItem) {
                     continue;
                 }
+
+                // Otherwise, give them a new one
                 if (!farmer.couldInventoryAcceptThisItem(swissArmyKnifeItemFactory))
                 {
                     continue;
